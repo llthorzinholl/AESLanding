@@ -73,7 +73,7 @@ export const ProblemSection = () => {
             </div>
 
             {/* RIGHT SIDE — APENAS TEXTOS DINÂMICOS ADICIONADOS */}
-            <div className="md:w-1/2 relative h-full min-h-[400px] w-full bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 group">
+            <div className="md:w-1/2 relative h-full min-h-[400px] w-full bg-slate-950 rounded-2xl overflow-visible md:overflow-hidden border border-slate-800 group">
 
               {/* 👇 VÍDEO ORIGINAL */}
               <div className="absolute inset-0 w-full h-full overflow-hidden">
@@ -95,16 +95,19 @@ export const ProblemSection = () => {
               {/* 👇 VINHETA ORIGINAL (mantida exatamente como estava) */}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
 
-            </div>
-
-            {/* Mobile-only: show the dynamic message (moved from video overlay) */}
-            <div className="md:hidden w-full mt-4">
-              <div className="flex flex-col items-center gap-2">
-                <div className={`${messages[index].color} text-xs font-bold px-3 py-1 inline-block rounded`}>{messages[index].title}</div>
-                <p className="text-white font-mono text-sm text-center px-4">{messages[index].text}</p>
+              {/* Mobile-only: show the dynamic message (moved from video overlay)
+                 Positioned absolutely so it doesn't affect layout; 16px below the video. */}
+              <div
+                className="md:hidden absolute left-4 right-4"
+                style={{ top: 'calc(100% + 16px)' }}
+              >
+                <div className="flex flex-col items-start gap-2">
+                  <div className={`${messages[index].color} text-xs font-bold px-3 py-1 inline-block rounded`}>{messages[index].title}</div>
+                  <p className="text-white font-mono text-sm text-left">{messages[index].text}</p>
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </Reveal>
       </div>

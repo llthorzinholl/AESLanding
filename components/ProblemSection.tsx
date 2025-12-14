@@ -112,6 +112,11 @@ export const ProblemSection = () => {
 
             </div>
 
+            {/* Mobile-only danger message below the video */}
+            <div className="md:hidden w-full mt-4 flex justify-center">
+              <div className="bg-neon-danger text-slate-950 text-sm font-bold px-4 py-2 rounded shadow">DANGER — even minor renovations can release dangerous asbestos fibres.</div>
+            </div>
+
           </div>
         </Reveal>
       </div>

@@ -85,8 +85,8 @@ export const Hero = () => {
             <div className="text-sm text-slate-500">EPA Compliant</div>
           </div>
           <div>
-            <div className="text-3xl font-mono font-bold text-white">24/7</div>
-            <div className="text-sm text-slate-500">Emergency Response</div>
+            <div className="text-3xl font-mono font-bold text-white">15 minutes</div>
+            <div className="text-sm text-slate-500">Fast Response</div>
           </div>
         </div>
       </div>

@@ -98,12 +98,14 @@ export const ProblemSection = () => {
               {/* Mobile-only: show the dynamic message (moved from video overlay)
                  Positioned absolutely so it doesn't affect layout; 16px below the video. */}
               <div
-                className="md:hidden absolute left-4 right-4"
+                className="md:hidden absolute left-4 right-4 z-30 pointer-events-auto"
                 style={{ top: 'calc(100% + 16px)' }}
               >
-                <div className="flex flex-col items-start gap-2">
-                  <div className={`${messages[index].color} text-xs font-bold px-3 py-1 inline-block rounded`}>{messages[index].title}</div>
-                  <p className="text-white font-mono text-sm text-left">{messages[index].text}</p>
+                <div className="bg-slate-900/80 backdrop-blur-sm px-4 py-3 rounded shadow-md">
+                  <div className="flex flex-col items-start gap-2">
+                    <div className={`${messages[index].color} text-xs font-bold px-3 py-1 inline-block rounded`}>{messages[index].title}</div>
+                    <p className="text-white font-mono text-sm text-left">{messages[index].text}</p>
+                  </div>
                 </div>
               </div>
 

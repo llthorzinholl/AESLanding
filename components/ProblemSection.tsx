@@ -95,26 +95,14 @@ export const ProblemSection = () => {
               {/* 👇 VINHETA ORIGINAL (mantida exatamente como estava) */}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
 
-              {/* 👇 TEXTOS DINÂMICOS */}
-              <div className="absolute bottom-8 left-8 right-8">
-
-                {/* Título dinâmico + cor dinâmica */}
-                <div className={`${messages[index].color} text-xs font-bold px-2 py-1 inline-block rounded mb-2`}>
-                  {messages[index].title}
-                </div>
-
-                {/* Texto dinâmico */}
-                <p className="text-white font-mono text-sm">
-                  {messages[index].text}
-                </p>
-
-              </div>
-
             </div>
 
-            {/* Mobile-only danger message below the video */}
-            <div className="md:hidden w-full mt-4 flex justify-center">
-              <div className="bg-neon-danger text-slate-950 text-sm font-bold px-4 py-2 rounded shadow">DANGER — even minor renovations can release dangerous asbestos fibres.</div>
+            {/* Mobile-only: show the dynamic message (moved from video overlay) */}
+            <div className="md:hidden w-full mt-4">
+              <div className="flex flex-col items-center gap-2">
+                <div className={`${messages[index].color} text-xs font-bold px-3 py-1 inline-block rounded`}>{messages[index].title}</div>
+                <p className="text-white font-mono text-sm text-center px-4">{messages[index].text}</p>
+              </div>
             </div>
 
           </div>

@@ -28,7 +28,7 @@ export const ProblemSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % messages.length);
-    }, 4000); // troca cada 4s
+    }, 5000); // troca cada 5s
 
     return () => clearInterval(interval);
   }, []);
@@ -95,18 +95,10 @@ export const ProblemSection = () => {
               {/* 👇 VINHETA ORIGINAL (mantida exatamente como estava) */}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
 
-              {/* Mobile-only: show the dynamic message (moved from video overlay)
-                 Positioned absolutely so it doesn't affect layout; 16px below the video. */}
-              <div
-                className="md:hidden absolute left-4 right-4 z-30 pointer-events-auto"
-                style={{ top: 'calc(100% + 16px)' }}
-              >
-                <div className="bg-slate-900/80 backdrop-blur-sm px-4 py-3 rounded shadow-md">
-                  <div className="flex flex-col items-start gap-2">
-                    <div className={`${messages[index].color} text-xs font-bold px-3 py-1 inline-block rounded`}>{messages[index].title}</div>
-                    <p className="text-white font-mono text-sm text-left">{messages[index].text}</p>
-                  </div>
-                </div>
+              {/* Dynamic texts overlay (restored) */}
+              <div className="absolute bottom-8 left-8 right-8">
+                <div className={`${messages[index].color} text-xs font-bold px-2 py-1 inline-block rounded mb-2`}>{messages[index].title}</div>
+                <p className="text-white font-mono text-sm text-left">{messages[index].text}</p>
               </div>
 
             </div>

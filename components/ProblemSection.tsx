@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Skull, Wind, ShieldAlert, Activity } from 'lucide-react';
 import { Reveal } from './ui/Reveal';
+// Import local video so Vite includes it in the build output
+import landingVideo from '../assets/landingpage3.mp4';
 
 export const ProblemSection = () => {
 
@@ -84,7 +86,7 @@ export const ProblemSection = () => {
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               >
                 <source 
-                  src="./assets/landingpage3.mp4" 
+                  src={landingVideo} 
                   type="video/mp4"
                 />
               </video>

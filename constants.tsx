@@ -11,6 +11,16 @@ import {
 } from 'lucide-react';
 import { ServiceItem, ProcessStep, Testimonial, FAQItem, GalleryItem } from './types';
 
+// Import local gallery images so Vite bundles/copies them into the build
+import before1 from './assets/before1.png';
+import before2 from './assets/before2.png';
+import before3 from './assets/before3.png';
+import before4 from './assets/before4.png';
+import after1 from './assets/after1.png';
+import after2 from './assets/after2.png';
+import after3 from './assets/after3.png';
+import after4 from './assets/after4.png';
+
 export const NAV_LINKS = [
   { name: 'The Risk', href: '#problem' },
   { name: 'Services', href: '#services' },
@@ -117,26 +127,26 @@ export const FAQS: FAQItem[] = [
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 1,
-    beforeUrl: "./assets/before1.png", 
-    afterUrl: "./assets/after1.png", 
+    beforeUrl: before1,
+    afterUrl: after1,
     label: "Full Burnt House Demolition"
   },
   {
     id: 2,
-    beforeUrl: "./assets/before2.png", 
-    afterUrl: "./assets/after2.png", 
+    beforeUrl: before2,
+    afterUrl: after2,
     label: "Roof Sheets Removal"
   },
   {
     id: 3,
-    beforeUrl: "./assets/before3.png", 
-    afterUrl: "./assets/after3.png", 
+    beforeUrl: before3,
+    afterUrl: after3,
     label: "Ceiling Panels Removal"
   },
   {
     id: 4,
-    beforeUrl: "./assets/before4.png", 
-    afterUrl: "./assets/after4.png", 
+    beforeUrl: before4,
+    afterUrl: after4,
     label: "Full Bathroom Strip Out"
   }
 ];

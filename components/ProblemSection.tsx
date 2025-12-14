@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Skull, Wind, ShieldAlert, Activity } from 'lucide-react';
 import { Reveal } from './ui/Reveal';
-// Import local video so Vite includes it in the build output
-import landingVideo from '../assets/landingpage3.mp4';
 
 export const ProblemSection = () => {
 
@@ -78,18 +76,16 @@ export const ProblemSection = () => {
             <div className="md:w-1/2 relative h-full min-h-[400px] w-full bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 group">
 
               {/* 👇 VÍDEO ORIGINAL */}
-              <video 
-                autoPlay 
-                loop 
-                muted 
-                playsInline 
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              >
-                <source 
-                  src={landingVideo} 
-                  type="video/mp4"
+              <div className="absolute inset-0 w-full h-full">
+                <iframe
+                  src="https://player.vimeo.com/video/1146343746?autoplay=1&loop=1&muted=1&playsinline=1&background=1"
+                  className="w-full h-full object-cover"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="Landing video"
                 />
-              </video>
+              </div>
 
               {/* 👇 VINHETA ORIGINAL (mantida exatamente como estava) */}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>

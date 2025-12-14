@@ -15,7 +15,7 @@ export const Process = () => {
           {/* Connector Line (Desktop) */}
           <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-800 -translate-y-1/2 z-0"></div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10 justify-items-center md:justify-items-stretch">
             {PROCESS_STEPS.map((step, index) => (
               <Reveal key={step.id} delay={index * 0.2}>
                 <div className="flex flex-col items-center text-center">
@@ -23,7 +23,7 @@ export const Process = () => {
                     <span className="group-hover:text-neon-green transition-colors">{step.id}</span>
                   </div>
                   <h4 className="text-lg font-bold text-white mb-2">{step.title}</h4>
-                  <p className="text-sm text-slate-400 max-w-[200px]">{step.description}</p>
+                  <p className="text-sm text-slate-400 max-w-[280px] md:max-w-[200px]">{step.description}</p>
                 </div>
               </Reveal>
             ))}

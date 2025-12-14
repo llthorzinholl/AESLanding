@@ -76,10 +76,11 @@ export const ProblemSection = () => {
             <div className="md:w-1/2 relative h-full min-h-[400px] w-full bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 group">
 
               {/* 👇 VÍDEO ORIGINAL */}
-              <div className="absolute inset-0 w-full h-full">
+              <div className="absolute inset-0 w-full h-full overflow-hidden">
                 <iframe
                   src="https://player.vimeo.com/video/1146343746?autoplay=1&loop=1&muted=1&playsinline=1&background=1"
-                  className="w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full"
+                  style={{ objectFit: 'cover' }}
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture"
                   allowFullScreen

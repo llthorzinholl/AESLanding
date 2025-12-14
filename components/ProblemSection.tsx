@@ -77,10 +77,14 @@ export const ProblemSection = () => {
 
               {/* 👇 VÍDEO ORIGINAL */}
               <div className="absolute inset-0 w-full h-full overflow-hidden">
+                {/*
+                  Use a cover technique: position iframe centered and scale width >100%
+                  so the video preserves aspect ratio and fills container on mobile.
+                */}
                 <iframe
                   src="https://player.vimeo.com/video/1146343746?autoplay=1&loop=1&muted=1&playsinline=1&background=1"
-                  className="absolute inset-0 w-full h-full"
-                  style={{ objectFit: 'cover' }}
+                  className="absolute top-0 left-1/2 h-full"
+                  style={{ width: '177.78%', transform: 'translateX(-50%)' }}
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture"
                   allowFullScreen
